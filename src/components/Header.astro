@@ -44,12 +44,16 @@ import logo from "../assets/images/logo.svg";
         </ul>
       </nav>
       <ul class="header__icons">
-        <a href="#" class="header__icons-item">
-          <Image src={profile} alt="profile icon" class="header__item-img" />
-        </a>
-        <a href="#" class="header__icons-item">
-          <Image src={buy} alt="profile icon" class="header__item-img" />
-        </a>
+        <li>
+          <a href="#" class="header__icons-item">
+            <Image src={profile} alt="profile icon" class="header__item-img" />
+          </a>
+        </li>
+        <li>
+          <a href="#" class="header__icons-item">
+            <Image src={buy} alt="profile icon" class="header__item-img" />
+          </a>
+        </li>
         <li class="burger-menu">
           <span class="burger-menu__item"></span>
           <span class="burger-menu__item"></span>
@@ -63,7 +67,7 @@ import logo from "../assets/images/logo.svg";
 <style lang="scss">
   .header {
     padding: 45px 0 73px 0;
-    background-color: #F9F6F5;
+    background-color: #f9f6f5;
     &__content {
       display: flex;
       justify-content: space-between;
@@ -133,7 +137,7 @@ import logo from "../assets/images/logo.svg";
         bottom: 0;
         left: 0;
         inset: 0 0 0 0;
-        background: #F4DCD3;
+        background: #f4dcd3;
         z-index: -1;
         transition: transform 0.3s ease;
       }
@@ -236,7 +240,7 @@ import logo from "../assets/images/logo.svg";
     }
 
     .header {
-      padding: 30px 0 ;
+      padding: 30px 0;
     }
   }
 </style>
