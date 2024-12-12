@@ -9,7 +9,6 @@ import walmart from "../assets/images/walmart.svg";
 import fedex from "../assets/images/fedEx.svg";
 import product1 from "../assets/images/product_1.jpg";
 import product2 from "../assets/images/product_2.jpg";
-import arrow from "../assets/images/arrow.svg";
 import description from "../assets/images/description.jpg";
 import search from "../assets/images/search.svg";
 import hero from "../assets/images/hero.jpg";
@@ -538,7 +537,7 @@ import starTransperent from "../assets/images/star-transperent.svg";
 	</main>
 </Layout>
 
-<style lang="scss" define:vars={{ arrow: `url(${arrow.src})` }}>
+<style lang="scss">
 	.hero {
 		background-color: #f9f6f5;
 		&__content {
@@ -710,7 +709,7 @@ import starTransperent from "../assets/images/star-transperent.svg";
 				position: absolute;
 				right: -32px;
 				top: 5px;
-				background-image: var(--arrow);
+				background-image: url('/test-approve-leads/arrow.svg');
 				width: 24px;
 				height: 24px;
 			}
