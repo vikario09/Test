@@ -1,0 +1,52 @@
+---
+import "../assets/styles/main.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			style="visibility: hidden; position: absolute; width: 0; height: 0;"
+		>
+			<symbol
+				id="icon-arrow"
+				viewBox="0 0 40 40"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+			>
+				<path
+					d="M14.1667 8.33329L25.8334 20L14.1667 31.6666"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"></path>
+			</symbol>
+		</svg>
+
+		<div class="wrapper">
+			<Header />
+			<slot />
+			<Footer />
+		</div>
+	</body>
+	<script type="module" src="/src/assets/scripts/app.js" is:inline></script>
+</html>
+
+<style is:global></style>

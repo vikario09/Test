@@ -1,0 +1,275 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo.svg";
+import facebook from "../assets/images/facebook.svg";
+import twitter from "../assets/images/twitter.svg";
+import instagram from "../assets/images/instagram.svg";
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <div class="subscription">
+        <p class="subscription__title title title--sm">Subscribe to Get Our Letest News</p>
+        <div class="subscription__wrap">
+          <input
+            type="text"
+            class="subscription__input"
+            placeholder="Enter email"
+          />
+          <button class="subscription__btn btn btn--sm">Subscribe</button>
+        </div>
+      </div>
+      <div class="footer__info">
+        <div class="footer__column">
+          <div class="footer__logo">
+            <Image src={logo} alt="profile icon" class="footer__logo-img" />
+          </div>
+          <p class="footer__text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy
+          </p>
+        </div>
+        <div class="footer__column">
+          <h4 class="footer__column-title">Quick Link</h4>
+          <ul class="footer__links">
+            <li class="footer__item">
+              <a class="footer__link" href="#">Home</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">Products</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="#">About Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__column">
+          <h4 class="footer__column-title">Contact Us</h4>
+          <ul class="footer__links">
+            <li class="footer__item">
+              <a class="footer__link" href="mailto:oyasimnaeem@email.com"
+                >oyasimnaeem@email.com</a
+              >
+            </li>
+            <li class="footer__item">
+              <a class="footer__link" href="tel:+123456789" href="#"
+                >+123456789</a
+              >
+            </li>
+            <li class="footer__item">
+              <div class="footer__icons">
+                <a class="footer__icon" href="#">
+                  <Image
+                    src={facebook}
+                    alt="social icon"
+                    class="footer__icons-img"
+                  />
+                </a>
+                <a class="footer__icon" href="#">
+                  <Image
+                    src={twitter}
+                    alt="social icon"
+                    class="footer__icons-img"
+                  />
+                </a>
+                <a class="footer__icon" href="#">
+                  <Image
+                    src={instagram}
+                    alt="social icon"
+                    class="footer__icons-img"
+                  />
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  .footer {
+    padding: 108px 0 52px;
+    background-color: #fafafa;
+    &__content {
+    }
+
+    &__info {
+      padding-top: 59px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    &__column {
+      max-width: 326px;
+    }
+
+    &__logo {
+      margin-bottom: 38px;
+    }
+
+    &__logo-img {
+    }
+
+    &__text {
+      color: #555;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 32px;
+    }
+
+    &__column-title {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 24px;
+      margin: 0 0 39px 0;
+    }
+
+    &__links {
+    }
+
+    &__item {
+      & + & {
+        margin-top: 20px;
+      }
+    }
+
+    &__link {
+      color: #222;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__icons {
+      cursor: pointer;
+    }
+
+    &__icon {
+      display: inline-block;
+
+      & + & {
+        padding-left: 27px;
+      }
+    }
+
+    &__icons-img {
+    }
+  }
+
+  .subscription {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 64px;
+
+    &__title {
+    }
+
+    &__wrap {
+      max-width: 386px;
+      width: 100%;
+      position: relative;
+    }
+
+    &__input {
+      width: 100%;
+      padding: 18px 160px 18px 18px;
+      height: 56px;
+      font-size: 16px;
+      border: none;
+    }
+
+    &__btn {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .subscription {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .subscription {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 30px;
+
+      &__title {
+        text-align: center;
+      }
+    }
+
+    .footer {
+      padding: 52px 0;
+
+      &__info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        padding-top: 30px;
+      }
+
+      &__column {
+        &:first-child {
+          grid-column: span 2;
+          max-width: none;
+        }
+      }
+
+      &__column-title {
+        margin: 0 0 18px 0;
+      }
+
+      &__logo {
+        margin-bottom: 20px;
+      }
+
+      &__item {
+        & + & {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 520px) {
+    .subscription {
+      gap: 30px;
+      &__title {
+        font-size: 28px;
+      }
+    }
+
+    .footer {
+      padding-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .footer {
+      &__info {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      &__column {
+        &:first-child {
+          grid-column: span 1;
+        }
+      }
+    }
+  }
+</style>
