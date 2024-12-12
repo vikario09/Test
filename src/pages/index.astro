@@ -12,7 +12,8 @@ import product2 from "../assets/images/product_2.jpg";
 import arrow from "../assets/images/arrow.svg";
 import description from "../assets/images/description.jpg";
 import search from "../assets/images/search.svg";
-import hero from "../assets/images/hero_2.jpg";
+import hero from "../assets/images/hero.jpg";
+import hero2 from "../assets/images/hero_2.jpg";
 import reviews from "../assets/images/reviews.jpg";
 import reviews2 from "../assets/images/reviews_2.jpg";
 import reviews3 from "../assets/images/reviews_3.jpg";
@@ -29,13 +30,32 @@ import starTransperent from "../assets/images/star-transperent.svg";
 			<div class="container">
 				<div class="hero__content">
 					<div class="hero__info">
-						<div class="hero__title title">
-							Get Your Best Cosmetic Products Here
+						<div class="hero__info-swiper swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<div class="hero__title title">
+										Get Your Best Cosmetic Products Here
+									</div>
+									<p class="hero__text">
+										Lorem Ipsum is simply dummy text of the printing and
+										typesetting industry. Lorem Ipsum has been the industry's
+										standard dummy
+									</p>
+								</div>
+
+								<div class="swiper-slide">
+									<div class="hero__title title">
+										Get Your Best Cosmetic Products Here You Gooo!
+									</div>
+									<p class="hero__text">
+										Lorem Ipsum is simply dummy text of the printing and
+										typesetting industry. Lorem Ipsum has been the industry's
+										standard dummy
+									</p>
+								</div>
+							</div>
 						</div>
-						<p class="hero__text">
-							Lorem Ipsum is simply dummy text of the printing and typesetting
-							industry. Lorem Ipsum has been the industry's standard dummy
-						</p>
+
 						<div class="hero__input-wrap">
 							<input type="text" class="hero__input" placeholder="Search..." />
 							<button class="hero__input-btn">
@@ -50,22 +70,36 @@ import starTransperent from "../assets/images/star-transperent.svg";
 						</div>
 						<a class="hero__btn btn" href="#">Shop Now</a>
 					</div>
-					<div class="hero__photo-wrap">
-						<div class="hero__photo">
-							<Image src={hero} alt="beauty" class="hero__img" />
+
+					<div class="hero__photo-swiper swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="hero__photo">
+									<Image src={hero} alt="beauty" class="hero__img" />
+								</div>
+							</div>
+
+							<div class="swiper-slide">
+								<div class="hero__photo">
+									<Image src={hero2} alt="beauty" class="hero__img" />
+								</div>
+							</div>
 						</div>
+
 						<div class="hero__arrows">
-							<button class="hero__arrow">
+							<button class="hero__arrow hero__icon-left">
 								<svg class="hero__icon-arrow">
 									<use xlink:href="#icon-arrow"></use>
 								</svg>
 							</button>
-							<button class="hero__arrow">
+							<button class="hero__arrow hero__icon-right">
 								<svg class="hero__icon-arrow">
 									<use xlink:href="#icon-arrow"></use>
 								</svg>
 							</button>
 						</div>
+
+						<div class="swiper-pagination"></div>
 					</div>
 				</div>
 			</div>
@@ -199,17 +233,27 @@ import starTransperent from "../assets/images/star-transperent.svg";
 				<div class="numbers__content padding-container">
 					<ul class="numbers__list">
 						<li class="numbers__item">
-							<p class="numbers__number">100%</p>
+							<p class="numbers__number">
+								<span class="counting" data-count="100">0</span>%
+							</p>
 							<p class="numbers__text">Organic Products</p>
 						</li>
 
 						<li class="numbers__item">
-							<p class="numbers__number">2M+</p>
+							<p class="numbers__number">
+								<span class="counting" data-count="2" data-decimal="true"
+									>0</span
+								>M+
+							</p>
 							<p class="numbers__text">Yearly Sales</p>
 						</li>
 
 						<li class="numbers__item">
-							<p class="numbers__number">1.9M+</p>
+							<p class="numbers__number">
+								<span class="counting" data-count="1.9" data-decimal="true"
+									>0</span
+								>M+
+							</p>
 							<p class="numbers__text">Happy Customar</p>
 						</li>
 					</ul>
@@ -505,12 +549,11 @@ import starTransperent from "../assets/images/star-transperent.svg";
 		}
 
 		&__info {
-			flex: 1 1 45%;
+			width: 45%;
 		}
 
 		&__title {
 			margin-bottom: 30px;
-			margin-right: -200px;
 			margin-top: 40px;
 			position: relative;
 			z-index: 2;
@@ -518,6 +561,7 @@ import starTransperent from "../assets/images/star-transperent.svg";
 
 		&__text {
 			margin-bottom: 30px;
+			margin-right: 200px;
 		}
 
 		&__input-wrap {
@@ -528,7 +572,7 @@ import starTransperent from "../assets/images/star-transperent.svg";
 
 		&__input {
 			width: 100%;
-			padding: 14px 100px 14px 16px;
+			padding: 14px 50px 14px 16px;
 			border: none;
 		}
 
@@ -550,16 +594,16 @@ import starTransperent from "../assets/images/star-transperent.svg";
 		}
 
 		&__btn {
-		}
-
-		&__photo-wrap {
-			margin-right: -100px;
-			position: relative;
+			margin-bottom: 100px;
 		}
 
 		&__photo {
 			max-width: 796px;
 			height: 100%;
+		}
+
+		&__photo-swiper {
+			margin-right: -100px;
 		}
 
 		&__img {
@@ -578,6 +622,7 @@ import starTransperent from "../assets/images/star-transperent.svg";
 			position: absolute;
 			bottom: 0;
 			left: 0;
+			z-index: 5;
 		}
 
 		&__arrow {
@@ -599,6 +644,21 @@ import starTransperent from "../assets/images/star-transperent.svg";
 			height: 40px;
 			width: 40px;
 			display: flex;
+		}
+
+		.swiper-button-disabled {
+			.reviews__icon-arrow {
+				color: #c4c4c4;
+			}
+		}
+
+		&__info-swiper {
+			margin-right: -200px;
+			z-index: 20;
+		}
+
+		.swiper-pagination {
+			display: none;
 		}
 	}
 
@@ -892,13 +952,13 @@ import starTransperent from "../assets/images/star-transperent.svg";
 
 		&__icon-arrow-right {
 		}
-	}
 
-	.swiper-button-disabled {
-		border: 1px solid #c4c4c4;
+		.swiper-button-disabled {
+			border: 1px solid #c4c4c4;
 
-		.reviews__icon-arrow {
-			color: #c4c4c4;
+			.reviews__icon-arrow {
+				color: #c4c4c4;
+			}
 		}
 	}
 
@@ -921,6 +981,39 @@ import starTransperent from "../assets/images/star-transperent.svg";
 
 			&__photo {
 				max-width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: 1000px) {
+		.hero {
+			&__content {
+				flex-direction: column;
+			}
+
+			&__info {
+				width: 100%;
+			}
+
+			&__info-swiper {
+				margin-right: 0;
+			}
+
+			&__photo {
+				max-width: none;
+			}
+
+			&__photo-swiper {
+				width: 100%;
+				margin-right: 0;
+			}
+
+			&__text {
+				margin-right: 0;
+			}
+
+			&__btn {
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -998,6 +1091,18 @@ import starTransperent from "../assets/images/star-transperent.svg";
 			&__item {
 				width: 100%;
 			}
+		}
+	}
+
+	@media (max-width: 600px) {
+		.hero {
+			&__arrows {
+				display: none;
+			}
+
+			.swiper-pagination {
+			display: block;
+		}
 		}
 	}
 
